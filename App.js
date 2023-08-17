@@ -1,22 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Design from './Design';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Design from './design';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Design"
-        component={Design}
-        options={{title: 'Design'}}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen
+          name="Design"
+          component={Design}
+          options={{ title: 'Design' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
